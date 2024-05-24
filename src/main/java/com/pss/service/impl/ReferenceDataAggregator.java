@@ -6,9 +6,10 @@ import com.pss.service.ReferenceDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @Service
 public class ReferenceDataAggregator implements ReferenceDataAggregatorService {
@@ -20,23 +21,21 @@ public class ReferenceDataAggregator implements ReferenceDataAggregatorService {
     }
 
     @Override
+    public Set<String> getCodes() {
+        return referenceDataMap.keySet();
+    }
+
+    @Override
     public List<ReferenceData> getReferenceDataByCode(String[] codes) {
-        List<ReferenceData> referenceDataList = new ArrayList<>();
-        for (String code : codes) {
-            ReferenceDataService referenceData = referenceDataMap.get(code);
-            if(referenceData != null){
-                referenceDataList.add(new ReferenceData(code, referenceData.getReferenceData()));
-            }
-        }
-        return referenceDataList;
+        return Arrays.stream(codes)
+                .map(e->new ReferenceData(e, referenceDataMap.get(e).getReferenceData()))
+                .toList();
     }
 
     @Override
     public List<ReferenceData> getAllReferenceData() {
-        List<ReferenceData> referenceDataList = new ArrayList<>();
-        for (Map.Entry<String, ReferenceDataService> entry : referenceDataMap.entrySet()) {
-            referenceDataList.add(new ReferenceData(entry.getKey(), entry.getValue().getReferenceData()));
-        }
-        return referenceDataList;
+        return referenceDataMap.entrySet().stream()
+                .map(e->new ReferenceData(e.getKey(), e.getValue().getReferenceData()))
+                .toList();
     }
 }
