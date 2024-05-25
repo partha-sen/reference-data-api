@@ -7,5 +7,7 @@ public final class ReferenceDataConstants {
     public static final String CATEGORY = "category";
     public static final String COMPANY = "company";
     public static final String SUB_CATEGORY = "sub-category";
+    public static final String STORE = "store";
+    public static final String SUPPLIER_FOR_STORE = "supplier-for-store";
 
 }

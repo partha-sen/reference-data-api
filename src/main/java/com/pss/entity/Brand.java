@@ -16,7 +16,7 @@ public class Brand {
     SubCategory subCategory;
 
     @ManyToOne
-    @JoinColumn(name = "company_code")
+    @JoinColumn(name = "company_code", nullable = false)
     Company company;
 
 }

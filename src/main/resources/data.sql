@@ -64,4 +64,24 @@ INSERT INTO brand (sub_category_id, id, company_code, brand_name) VALUES (8, 34,
 INSERT INTO brand (sub_category_id, id, company_code, brand_name) VALUES (8, 35, 'COKE', 'Sprite');
 INSERT INTO brand (sub_category_id, id, company_code, brand_name) VALUES (8, 36, 'COKE', 'Fanta');
 
+INSERT INTO store (id, name) VALUES (1, 'HYD001');
+INSERT INTO store (id, name) VALUES (2, 'HYD002');
+INSERT INTO store (id, name) VALUES (3, 'HYD003');
+INSERT INTO store (id, name) VALUES (4, 'HYD004');
+
+INSERT INTO supplier (id, name) VALUES (1, 'Max');
+INSERT INTO supplier (id, name) VALUES (2, 'DTM');
+INSERT INTO supplier (id, name) VALUES (3, 'Ekart');
+INSERT INTO supplier (id, name) VALUES (4, 'Ecom');
+
+INSERT INTO store_supplier(id, store_id, supplier_id) VALUES (1, 1, 1);
+INSERT INTO store_supplier(id, store_id, supplier_id) VALUES (2, 1, 3);
+INSERT INTO store_supplier(id, store_id, supplier_id) VALUES (3, 2, 1);
+INSERT INTO store_supplier(id, store_id, supplier_id) VALUES (4, 2, 2);
+INSERT INTO store_supplier(id, store_id, supplier_id) VALUES (5, 2, 3);
+INSERT INTO store_supplier(id, store_id, supplier_id) VALUES (6, 3, 2);
+INSERT INTO store_supplier(id, store_id, supplier_id) VALUES (7, 3, 3);
+INSERT INTO store_supplier(id, store_id, supplier_id) VALUES (8, 4, 1);
+INSERT INTO store_supplier(id, store_id, supplier_id) VALUES (9, 4, 2);
+INSERT INTO store_supplier(id, store_id, supplier_id) VALUES (10, 4, 4);
 
