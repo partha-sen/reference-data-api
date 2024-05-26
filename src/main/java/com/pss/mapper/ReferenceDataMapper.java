@@ -41,11 +41,21 @@ public interface ReferenceDataMapper {
     @Mapping(source = "name", target = "label")
     ReferenceDataElement toReferenceDataElement(Store store);
 
+    @Mapping(source = "id", target = "value")
+    @Mapping(source = "name", target = "label")
+    ReferenceDataElement toReferenceDataElement(Supplier supplier);
+
 
     @Mapping(source = "supplier.id", target = "value")
     @Mapping(source = "supplier.name", target = "label")
-    @Mapping(target = "linkedEntity", expression = "java(addLinkedEntity(storeSupplier))")
-    ReferenceDataElement toReferenceDataElement(StoreSupplier storeSupplier);
+    @Mapping(target = "linkedEntity", expression = "java(addLinkedEntityStore(storeSupplier))")
+    ReferenceDataElement toReferenceDataElementForStore(StoreSupplier storeSupplier);
+
+
+    @Mapping(source = "store.id", target = "value")
+    @Mapping(source = "store.name", target = "label")
+    @Mapping(target = "linkedEntity", expression = "java(addLinkedEntitySupplier(storeSupplier))")
+    ReferenceDataElement toReferenceDataElementForSupplier(StoreSupplier storeSupplier);
 
 
    default Map<String, String> addLinkedEntity(SubCategory subCategory){
@@ -61,9 +71,15 @@ public interface ReferenceDataMapper {
         return linkedEntity;
     }
 
-    default Map<String, String> addLinkedEntity(StoreSupplier storeSupplier){
+    default Map<String, String> addLinkedEntityStore(StoreSupplier storeSupplier){
         Map<String, String> linkedEntity = new HashMap<>();
         linkedEntity.put(ReferenceDataConstants.STORE, storeSupplier.getStore().getId().toString());
+        return linkedEntity;
+    }
+
+    default Map<String, String> addLinkedEntitySupplier(StoreSupplier storeSupplier){
+        Map<String, String> linkedEntity = new HashMap<>();
+        linkedEntity.put(ReferenceDataConstants.SUPPLIER, storeSupplier.getSupplier().getId().toString());
         return linkedEntity;
     }
 
