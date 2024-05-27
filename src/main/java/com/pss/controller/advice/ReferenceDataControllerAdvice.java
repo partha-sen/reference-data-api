@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @Slf4j
 public class ReferenceDataControllerAdvice {
     @ExceptionHandler({ConstraintViolationException.class})
-    public ResponseEntity<Object> handleCustomException(ConstraintViolationException e, WebRequest req){
+    public ResponseEntity<Object> handleCustomViolationException(ConstraintViolationException e, WebRequest req){
         log.info("Custom validation Failed", e);
         List<ResponseEntity<String>> errors = e.getConstraintViolations().stream()
                 .map(v -> ResponseEntity.badRequest().body(v.getMessage()))

@@ -11,12 +11,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service(ReferenceDataConstants.STORES_FOR_SUPPLIER)
-public class StoreForSupplierService implements ReferenceDataService {
+public class StoresForSupplierService implements ReferenceDataService {
 
     private final StoreSupplierRepository storeSupplierRepository;
     private final ReferenceDataMapper referenceDataMapper;
 
-    public StoreForSupplierService(StoreSupplierRepository storeSupplierRepository, ReferenceDataMapper referenceDataMapper) {
+    public StoresForSupplierService(StoreSupplierRepository storeSupplierRepository, ReferenceDataMapper referenceDataMapper) {
         this.storeSupplierRepository = storeSupplierRepository;
         this.referenceDataMapper = referenceDataMapper;
     }
