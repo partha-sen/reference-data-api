@@ -1,16 +1,16 @@
-INSERT INTO categories (id, category) VALUES (1, 'Cosmetics');
-INSERT INTO categories (id, category) VALUES (2, 'Home Care');
-INSERT INTO categories (id, category) VALUES (3, 'Soft Drink');
+INSERT INTO category (id, category) VALUES (1, 'Cosmetics');
+INSERT INTO category (id, category) VALUES (2, 'Home Care');
+INSERT INTO category (id, category) VALUES (3, 'Soft Drink');
 
 
-INSERT INTO sub_categories (category_id, id, sub_category) VALUES (1, 1, 'Soap');
-INSERT INTO sub_categories (category_id, id, sub_category) VALUES (1, 2, 'Shampoo');
-INSERT INTO sub_categories (category_id, id, sub_category) VALUES (1, 3, 'Body lotion');
-INSERT INTO sub_categories (category_id, id, sub_category) VALUES (2, 4, 'Floor cleaner');
-INSERT INTO sub_categories (category_id, id, sub_category) VALUES (2, 5, 'Detergent');
-INSERT INTO sub_categories (category_id, id, sub_category) VALUES (2, 6, 'Dishwash');
-INSERT INTO sub_categories (category_id, id, sub_category) VALUES (3, 7, 'Energy Drinks');
-INSERT INTO sub_categories (category_id, id, sub_category) VALUES (3, 8, 'Carbonated Drinks');
+INSERT INTO sub_category (category_id, id, sub_category) VALUES (1, 1, 'Soap');
+INSERT INTO sub_category (category_id, id, sub_category) VALUES (1, 2, 'Shampoo');
+INSERT INTO sub_category (category_id, id, sub_category) VALUES (1, 3, 'Body lotion');
+INSERT INTO sub_category (category_id, id, sub_category) VALUES (2, 4, 'Floor cleaner');
+INSERT INTO sub_category (category_id, id, sub_category) VALUES (2, 5, 'Detergent');
+INSERT INTO sub_category (category_id, id, sub_category) VALUES (2, 6, 'Dishwash');
+INSERT INTO sub_category (category_id, id, sub_category) VALUES (3, 7, 'Energy Drinks');
+INSERT INTO sub_category (category_id, id, sub_category) VALUES (3, 8, 'Carbonated Drinks');
 
 INSERT INTO company (code, company_name) VALUES ('HUL', 'Hindustan unilever');
 INSERT INTO company (code, company_name) VALUES ('ITC', 'ITC Limited');
